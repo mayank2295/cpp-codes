@@ -1,0 +1,31 @@
+// selection osrt 
+# include <iostream> 
+using namespace std; 
+void selectionsort(int arr[],int n){
+    // selection sort 
+    for(int i = 0;i<n;i++){
+        int minindex = i;
+        for(int j = i+1;j<n;j++){
+            if(arr[minindex]>arr[j]){
+                minindex = j;
+            }
+        }
+        // swap 
+        int temp = arr[i];
+        arr[i] = arr[minindex];
+        arr[minindex] = temp;
+    }
+    for(int i =0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+}
+int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i =0;i<n;i++){
+        cin>>arr[i];
+    }
+    selectionsort(arr,n);
+    return 0;
+}
